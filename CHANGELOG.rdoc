@@ -1,0 +1,73 @@
+== 1.1.8 2010-16-05
+
+* Set KEEPALIVE on connection socket options
+* Attempt to support JRuby more robustly (poll remains broken)
+* Switch to ruby supplied IO#ready?
+* Test enhancements for suppress_content_length header
+* Miscellaneous small documentation updates
+* Add parse_timeout parameter for use with hashed logins 
+* Allow connection to hosts with a - (dash) in the host name
+* Add limit parameter to thread joins
+
+== 1.1.7 2010-09-01
+
+* Binary parse of raw STOMP frame
+* Fix broken tests on Ruby 1.9.2
+
+== 1.1.6 2010-10-06
+
+* Fixed multi-thread app hanging
+
+== 1.1.5 2010-17-03
+
+* Added publish method (send is now deprecated)
+* Changes on Rake File
+* Added original_destination header to unreceive
+* suppress content length header is send on the message for future handling (like unreceive)
+
+== 1.1.4 2010-21-01
+
+* Added unreceive message method that sends the message back to its queue or to the 
+  dead letter queue, depending on the :max_redeliveries option, similar to a13m one.
+* Added environment variable option for running 'rake test' on any stomp server, using any port with any user.
+* Added suppress_content_length header option for ActiveMQ knowing it is a text message (see: 
+  http://juretta.com/log/2009/05/24/activemq-jms-stomp/)
+* Fixed some bugs with Ruby 1.9 (concatenate string + exception)
+* Major changes on message parsing feature
+* Fixed bug with old socket not being closed when using failover
+* Fixed broken poll method on Connection
+* Fixed broken close method on Client
+* Added connection_frame accessor
+* Added disconnect receipt
+
+== 1.1.3 2009-24-11
+
+* Failover support
+* SSL support
+* Stomp::Connection and Stomp::Client accept a hash on their constructor
+
+== 1.1 2009-27-02
+
+* Ruby 1.9 Support
+* Add support for connect_headers, to control the CONNECT command.
+* Refactored lib dir to separate concerns.
+* Better test coverage
+* General code cleanup. 
+
+== 1.0.6 2008-05-08
+
+* Whitespace cleanup
+* Refactored Rakefile and added stomp.gemspec for GitHub friendliness.
+* Added .gitignore file
+* Refactored layout of lib dir to separate concerns
+* Cleanup of initializers, and provide Client accessors for reading values (for testing)
+* Removed test/test_url_* files as they only differed from the test_client.rb in their
+  setup.  Super UnDry.  Added URL tests to cover stomp URL as param.
+* Created initial RSpec specs which stub/mock objects and should not require a running
+  Stomp server instance.
+
+== v1.0.5
+
+SVN rev 86 clone from http://svn.codehaus.org/stomp/ruby/trunk
+
+git-svn-id: http://svn.codehaus.org/stomp/ruby/trunk@86 fd4e7336-3dff-0310-b68a-b6615a75f13b
